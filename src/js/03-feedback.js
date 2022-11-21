@@ -26,10 +26,10 @@ function onFormSubmit(e) {
 }
 
 function populateFormData() {
-  const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
+  const savedData = localStorage.getItem(STORAGE_KEY);
+  const parseData = JSON.parse(savedData);
   if (savedData) {
-    refs.input.value = savedData.email;
-    refs.textarea.value = savedData.message;
+    refs.input.value = parseData.email;
+    refs.textarea.value = parseData.message;
   }
 }
